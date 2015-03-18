@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+	  http://www.springframework.org/schema/beans 
+	  http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	  http://www.springframework.org/schema/tx 
+	  http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+	  http://www.springframework.org/schema/aop 
+	  http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+	">
+	<bean id="errorDaoImpl" class="com.otaserver.dao.ErrorInfoDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="appDaoImpl" class="com.otaserver.dao.AppUpdateDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="infoDaoImpl" class="com.otaserver.dao.UpdateInfoDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="fileDao" class="com.otaserver.dao.FileInfoDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+
+
+	<bean id="infoServiceImpl" class="com.otaserver.service.impl.UpdateInfoServiceImpl">
+		<property name="infoDao" ref="infoDaoImpl" />
+	</bean>
+	<bean id="fileServiceImpl" class="com.otaserver.service.impl.FileInfoServiceImpl">
+		<property name="fileDao" ref="fileDao" />
+	</bean>
+	<bean id="errorServiceImpl" class="com.otaserver.service.impl.ErrorInfoServiceImpl">
+		<property name="errorDao" ref="errorDaoImpl" />
+	</bean>
+	<bean id="appServiceImpl" class="com.otaserver.service.impl.AppUpdateServiceImpl">
+		<property name="appDao" ref="appDaoImpl" />
+	</bean>
+
+</beans>

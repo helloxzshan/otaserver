@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+
+		<property name="connection.driver_class">org.sqlite.JDBC</property>
+		<!--
+		jdbc:sqlite:/home/ota_lucien/update_ota.db
+		jdbc:sqlite:E:/update_ota.db
+		-->
+		<property name="connection.url">jdbc:sqlite:/home/ota_lucien/update_ota.db</property>
+		
+		<!--
+		<property name="connection.url">jdbc:sqlite:E:/update_ota.db</property>
+		<property name="connection.url">jdbc:sqlite:/home/ota_lucien/update_ota.db</property>
+		<property name="connection.password"></property>
+		<property name="connection.username">root</property>
+		-->
+		<property name="dialect">com.otaserver.util.SQLiteDialect</property>
+		<property name="current_session_context_class">thread</property>
+		
+		<property name="show_sql">false</property>
+		<property name="hbm2ddl.auto">update</property>
+	<!--  
+		<property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+		<property name="hibernate.c3p0.timeout">3000</property>
+		<property name="hibernate.c3p0.max_size">20</property>
+		<property name="hibernate.c3p0.min_size">5</property>
+		<property name="hibernate.c3p0.max_statements">50</property>
+		<property name="hibernate.c3p0.idle_test_period">120</property>
+		<property name="hibernate.c3p0.acquire_increment">2</property>
+		<property name="hibernate.c3p0.validate">true</property>
+	-->
+		<!--映射文件配置 -->
+		<mapping resource="context/hibernate/maping/FileInfo.hbm.xml" />
+		<mapping resource="context/hibernate/maping/UpdateInfo.hbm.xml" />
+		<mapping resource="context/hibernate/maping/AppUpdate.hbm.xml" />
+		<mapping resource="context/hibernate/maping/ErrorInfo.hbm.xml" />
+	</session-factory>
+
+</hibernate-configuration>
+

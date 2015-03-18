@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.otaserver.bean">
+	<class name="AppUpdate" table="app_update" lazy="false">
+		<id name="versionNumber" type="java.lang.String" column="versionNumber">
+		</id>
+		<property name="versionCode" column="version_code" type="java.lang.String" />
+		<property name="appUrl" column="app_url" type="java.lang.String" />
+		<property name="createTime" column="create_time" type="java.lang.String" />
+		<property name="message" column="message" type="java.lang.String" />
+		<property name="versionType" column="version_type" type="java.lang.String" />
+	</class>
+	
+</hibernate-mapping>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.otaserver.bean">
+	<class name="ErrorInfo" table="error_info" lazy="false">
+		<id name="errorId" type="java.lang.String" column="error_id">
+		</id>
+		<property name="errorContent" column="error_content" type="java.lang.String"
+			length="2000000000" />
+		<property name="errorTime" column="error_time" type="java.lang.String"/>
+	</class>
+
+</hibernate-mapping>

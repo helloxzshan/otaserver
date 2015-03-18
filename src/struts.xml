@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.action.extension" value="php,do,api" />
+	<constant name="struts-devModel" value="true" />
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<constant name="struts.multipart.maxSize" value="1048576000" />
+
+	<package name="api" extends="struts-default" namespace="/api">
+		<action name="app_*" class="com.otaserver.action.AppUpdateAction"
+			method="{1}">
+			<result name="toModifyApp" type="dispatcher">/UpdateInfoConfig.jsp</result>
+			<result name="successApp" type="dispatcher">/UpdateInfoConfig.jsp</result>
+			<result name="toModifySys" type="dispatcher">/appSystemConfig.jsp</result>
+			<result name="successSys" type="dispatcher">/appSystemConfig.jsp</result>
+		</action>
+		<action name="info_*" class="com.otaserver.action.UpdateInfoAction"
+			method="{1}">
+		</action>
+		<action name="error_*" class="com.otaserver.action.ErrorInfoAction"
+			method="{1}">	
+		</action>
+	</package>
+
+</struts>

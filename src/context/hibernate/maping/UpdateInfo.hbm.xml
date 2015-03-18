@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.otaserver.bean.UpdateInfo" table="update_info">
+        <id name="firmwareId" type="java.lang.String">
+            <column name="firmware_id" length="2000000000"/>
+            <generator class="assigned" />
+        </id>
+        <property name="androidVersion" type="java.lang.String">
+            <column name="android_version" length="2000000000" />
+        </property>
+        <property name="deviceName" type="java.lang.String">
+            <column name="device_name" length="2000000000" />
+        </property>
+        <property name="boardName" type="java.lang.String">
+            <column name="board_name" length="2000000000" />
+        </property>
+        <property name="markVersion" type="java.lang.String">
+            <column name="makr_version" length="2000000000" />
+        </property>
+        <property name="description" type="java.lang.String">
+            <column name="description" length="2000000000" />
+        </property>
+        <property name="updateType" type="java.lang.Integer">
+            <column name="update_type" />
+        </property>
+        <property name="firmwarePid" type="java.lang.String">
+            <column name="firmware_pid" length="2000000000" />
+        </property>
+        <property name="fileSize" type="java.lang.String">
+            <column name="file_size" length="2000000000" />
+        </property>
+        <property name="isMustUpgrade" type="java.lang.String">
+            <column name="ismust_upgrade" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>
